@@ -20,9 +20,10 @@ firebase.initializeApp(firebaseConfig);
 let pages = firebase.database().ref("pages/");
 pages.on('value', function(snapshot) {
   data = snapshot.val();
+  console.log(data);
 })
 
 // console.log(process.env)
 app.get('/', (req, res) => res.send(data))
 
-app.listen(port, () => console.log('todo list RESTful API server started on: ' + port))
+app.listen(port, () => console.log('bftawfik-github-io API server started on: ' + port))
