@@ -1,5 +1,6 @@
 // require('dotenv').config();
 const express = require('express')
+var cors = require('cors')
 const app = express()
 const port = process.env.PORT || 3000
 
@@ -25,6 +26,7 @@ onValue(dbRef, (snapshot) => {
   data = snapshot.val();
 });
 
+app.use(cors())
 app.get('/', (req, res) => res.send(data))
 
 app.listen(port, () => console.log('bftawfik-github-io API server started on: ' + port))
